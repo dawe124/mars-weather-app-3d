@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <script type="module" src="/main.js"></script>
+    <script type="module" src="/battery.js"></script>
+    <script type="module" src="/controllers.js"></script>
+    <script type="module" src="/query.js"></script>
+    <!-- mars sketch svg by Master Uegly from https://commons.wikimedia.org/wiki/File:Mars_sketch_vector.svg -->
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+        }
+    </style>
+    <title>Mars Panorama App</title>
+    <link rel="icon" type="image/x-icon" href="/imgs/mars.svg">
+</head>
+<body>
+    <div id="hud">
+        <div id="logo" class="active">Mars App</div>
+        <div id="battery" class="active">
+            <div class="battery-top">
+                <div class="charging-status"></div>
+                <div class="charging-level"></div>
+            </div>
+            <div class="charging-bar-frame">
+                <div class="charging-bar"></div>
+            </div>
+        </div>
+        <div id="weather" class="active">
+            <div class="date">
+                <span>Sol 265</span>
+                <span>Aug 25</span>
+            </div>
+            <div class="temperature">
+                <span>High: -15 F</span>
+                <span>Low: -140 F</span>
+            </div>
+        </div>
+        <div id="camera" class="active">
+            <div class="camera-top">
+                <span>SECTOR-9-D</span>
+                <div class="zoom-item">
+                    <div class="zoom-sign">
+                        <span>-</span>
+                    </div>
+                    <div class="zoom-level-frame">
+                        <div id="zoom-level"></div>
+                    </div>
+                    <div class="zoom-sign">
+                        <span>+</span>
+                    </div>
+                </div>
+            </div>
+            <div class="camera-frame">
+                <div class="camera-left"></div>
+                <div class="camera-middle">
+                    <div class="crosshair"></div>
+                </div>
+                <div class="camera-right"></div>
+            </div>
+            <div class="camera-bottom">
+                <span>#13545D</span>
+                <div class="system-status">
+                    <div class="system-status-sign"></div>
+                    <span>ALL SYSTEMS ACTIVE</span>
+                </div>
+            </div>
+        </div>
+        <div id="controllers">
+            <h2>HUD Display</h2>
+            <div class="hud-toggle">Logo: <span data-id="logo">ON</span></div>
+            <div class="hud-toggle">Weather: <span data-id="weather">ON</span></div>
+            <div class="hud-toggle">Battery Status: <span data-id="battery">ON</span></div>
+            <div class="hud-toggle">Camera: <span data-id="camera">ON</span></div>
+        </div>
+    </div>
+    <div id="canvasContainer">
+        <canvas></canvas>
+    </div>
+</body>
+</html>
